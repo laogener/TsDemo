@@ -164,3 +164,41 @@ p1.eat();
 var p2 = new Person();
 p2.name = 'tomato';
 p2.eat();
+// 范型-参数化的类型，一般用来限制集合的内容
+var workers:Array<Person> = [];
+workers[0] = new Person('zhangsan');
+workers[1] = new Employe('lisi','2');
+workers[2] = 2;
+// 接口 - interface
+interface IPerson{
+    name:string;
+    age:number;
+}
+class Person2 {
+    constructor(public config:IPerson){
+
+    }
+}
+var p1 = new Person2({
+    name:'zhangsan',
+    age:18
+})
+interface Animal {
+    eat();
+}
+class Sheep implements Animal{
+    eat(){
+        console.log("I eat grass")
+    }
+}
+class Tiger implements Animal{
+    eat(){
+        console.log("I eat meat")
+    }
+}
+// 模块   a.ts   b.ts
+
+
+// 注解
+
+// 类型定义文件  https://github.com/typings/typings    https://github.com/DefinitelyTyped/DefinitelyTyped/edit/master/types/chai-jquery/index.d.ts

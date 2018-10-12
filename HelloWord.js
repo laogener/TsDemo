@@ -226,3 +226,37 @@ p1.eat();
 var p2 = new Person();
 p2.name = 'tomato';
 p2.eat();
+// 范型-参数化的类型，一般用来限制集合的内容
+var workers = [];
+workers[0] = new Person('zhangsan');
+workers[1] = new Employe('lisi', '2');
+workers[2] = 2;
+var Person2 = /** @class */ (function () {
+    function Person2(config) {
+        this.config = config;
+    }
+    return Person2;
+}());
+var p1 = new Person2({
+    name: 'zhangsan',
+    age: 18
+});
+var Sheep = /** @class */ (function () {
+    function Sheep() {
+    }
+    Sheep.prototype.eat = function () {
+        console.log("I eat grass");
+    };
+    return Sheep;
+}());
+var Tiger = /** @class */ (function () {
+    function Tiger() {
+    }
+    Tiger.prototype.eat = function () {
+        console.log("I eat meat");
+    };
+    return Tiger;
+}());
+// 模块   a.ts   b.ts
+// 注解
+// 类型定义文件  https://github.com/typings/typings    https://github.com/DefinitelyTyped/DefinitelyTyped/edit/master/types/chai-jquery/index.d.ts
